@@ -2,3 +2,4 @@ flask
 torch
 transformers
 pillow
+gunicorn
