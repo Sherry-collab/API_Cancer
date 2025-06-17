@@ -7,7 +7,12 @@ import torch
 # ... other imports ...
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+CORS(
+    app,
+    resources={r"/*": {"origins": "*"}},
+    supports_credentials=True,
+    methods="*"
+)
 # # Allow CORS for all routes (safe for dev; restrict in prod if needed)
 
 # Load model and processor
