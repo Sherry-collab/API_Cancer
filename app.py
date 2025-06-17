@@ -4,9 +4,11 @@ from transformers import BeitImageProcessor, BeitForImageClassification
 from PIL import Image
 import torch
 
-# Initialize Flask app
+# ... other imports ...
+
 app = Flask(__name__)
-CORS(app)  # Allow CORS for all routes (safe for dev; restrict in prod if needed)
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+# # Allow CORS for all routes (safe for dev; restrict in prod if needed)
 
 # Load model and processor
 MODEL_NAME = "ALM-AHME/beit-large-patch16-224-finetuned-Lesion-Classification-HAM10000-AH-60-20-20"
